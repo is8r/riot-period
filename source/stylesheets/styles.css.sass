@@ -1,0 +1,38 @@
+@charset "utf-8"
+
+@import "config/variables"
+@import "config/mixins"
+
+html
+  font-size: 100%
+  +breakpoint-down(md)
+    font-size: 75%
+
+body
+  +font
+  color: $color-gray
+
+h1
+  +font
+  color: $color-gray
+
+a
+  color: $color-key
+
+[data-riot-period]
+  .dropdown-item
+    white-space: nowrap !important
+    word-break: keep-all !important
+    word-wrap: normal !important
+    &.active
+      background: transparent
+      color: #000
+      font-weight: bold
+      &:hover
+        background: #f2f2f2
+  .form-control
+    display: inline-block
+    +breakpoint-down(md)
+      width: 100px !important
+  .btn
+    vertical-align: top

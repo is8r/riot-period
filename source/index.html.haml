@@ -1,0 +1,11 @@
+---
+title: Riot Period Components
+---
+
+%h1.my-1
+  = link_to '#' do
+    = current_page.data.title || data.config.title
+
+<riot-period></riot-period>
+<script src="/javascripts/components/riot-period.tag" type="riot/tag"></script>
+<script>riot.mount('*')</script>

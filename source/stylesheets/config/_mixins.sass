@@ -1,0 +1,37 @@
+// font
+
+$serif: 'ヒラギノ明朝 Pro W6','Hiragino Mincho Pro','HGS明朝E','ＭＳ Ｐ明朝',serif
+$sans: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif
+
+=font($size: 1rem, $line-height: normal, $weight: normal, $family: 'sans')
+  @if $family == "serif"
+    font-family: YuMincho, '游明朝', $serif
+  @else if $family == "sans"
+    font-family: 'Noto Sans Japanese', YuGothic, '游ゴシック', $sans
+  font-size: $size
+  font-weight: $weight
+  line-height: $line-height
+
+// breakpoint
+
+$media-breakpoints: (xs: 0, sm: 34em, md: 48em, lg: 62em)
+
+=breakpoint-down($name: md, $breakpoints: $media-breakpoints)
+  $map: map-get($breakpoints, $name)
+  @media (max-width: $map)
+    @content
+
+=breakpoint-up($name: md, $breakpoints: $media-breakpoints)
+  $map: map-get($breakpoints, $name)
+  @media (min-width: $map)
+    @content
+
+=fa($content: '\f105')
+  display: inline-block
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  line-height: 1
+  text-indent: 0
+  @if $content
+    content: $content
