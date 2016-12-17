@@ -1,11 +1,5 @@
-oreore middleman template
+## Riot.jsを使用した期間選択UIのサンプル
 
-deploy gh-pages:
+demo:
 
-```
-$ rake build && rake publish
-```
-
-open:
-
-[https://is8r.github.io/MY_PROJECT/](https://is8r.github.io/MY_PROJECT/)
+[https://is8r.github.io/riot-period/](https://is8r.github.io/riot-period/)
