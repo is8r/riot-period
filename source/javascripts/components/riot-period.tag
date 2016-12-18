@@ -58,11 +58,11 @@
 
     <div class="dropdown-menu pb-1" aria-labelledby="riot-period-select">
       <h6 class="dropdown-header">期間を選択</h6>
-      <a class={dropdown-item: true, active: isActive(1, 'weeks')} href="#" onclick={ onselect } data-period="1" data-period-type="weeks">先週</a>
-      <a class={dropdown-item: true, active: isActive(1, 'months')} href="#" onclick={ onselect } data-period="1" data-period-type="months">今月</a>
-      <a class={dropdown-item: true, active: isActive(3, 'months')} href="#" onclick={ onselect } data-period="3" data-period-type="months">過去3ヶ月</a>
-      <a class={dropdown-item: true, active: isActive(6, 'months')} href="#" onclick={ onselect } data-period="6" data-period-type="months">過去半年間</a>
-      <a class={dropdown-item: true, active: isActive(1, 'years')} href="#" onclick={ onselect } data-period="1" data-period-type="years">過去1年</a>
+      <a class={dropdown-item: true, active: isActive(1, 'weeks')} href="#" onclick={ onclick } data-period="1" data-period-type="weeks">先週</a>
+      <a class={dropdown-item: true, active: isActive(1, 'months')} href="#" onclick={ onclick } data-period="1" data-period-type="months">今月</a>
+      <a class={dropdown-item: true, active: isActive(3, 'months')} href="#" onclick={ onclick } data-period="3" data-period-type="months">過去3ヶ月</a>
+      <a class={dropdown-item: true, active: isActive(6, 'months')} href="#" onclick={ onclick } data-period="6" data-period-type="months">過去半年間</a>
+      <a class={dropdown-item: true, active: isActive(1, 'years')} href="#" onclick={ onclick } data-period="1" data-period-type="years">過去1年</a>
       <div class="dropdown-divider"></div>
       <h6 class="dropdown-header">カスタム</h6>
       <div class="dropdown-item dropdown-item-from">
@@ -95,11 +95,11 @@
     }
   }
 
-  onselect(e) {
+  onclick(e) {
     e.preventDefault()
-    var day = e.target.getAttribute('data-period')
+    var period = e.target.getAttribute('data-period')
     var type = e.target.getAttribute('data-period-type')
-    setPeriod(this, day, type)
+    setPeriod(this, period, type)
   }
 
   submit(e) {
